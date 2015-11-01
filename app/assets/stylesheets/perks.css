@@ -92,3 +92,8 @@ img {
 .list_perks h1 {
   font-family: 'Pacifico'
 }
+
+.hidden_detail {
+  display: hidden;
+  background-color: #D4E3F1;
+}
