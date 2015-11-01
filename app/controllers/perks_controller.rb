@@ -4,6 +4,8 @@ class PerksController < ApplicationController
     if current_user 
       @user_favorite = Favorite.where(user_id: current_user.id).last(2)
     end
+    @brands = Brand.all
+    gon.brands = @brands
     render 'perks'
   end 
 
