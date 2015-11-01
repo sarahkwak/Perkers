@@ -1,41 +1,37 @@
 body {
   text-align: center;
-  font-family: helvetica;
+  /*font-family: helvetica;*/
 }
 
 .hero {
   background-image: url('https://images.unsplash.com/photo-1416339134316-0e91dc9ded92?fit=crop&fm=jpg&h=1325&ixlib=rb-0.3.5&q=80&w=1100');
-  height: 700px;
+  background-size: 100%;
   background-repeat: no-repeat;
+  background-position: center;
+  height: 28vh;
+  padding-top: 30%;
   opacity: 0.8;
 }
 .hero h1 {
-  padding-top: 30%;
-  color: purple;
+  padding-top: -30%;
+  color: #440044;
+  font-family: 'Pacifico', cursive;
 }
 footer {
   text-align: right;
 }
 .nav {
-  font-family: helvetica;
+  /*font-family: helvetica;*/
   text-align: right;
 }
-.how_to {
-  height: 300px;
-}
-.search {
-  height: 300px;
+.how-to {
+  height: 250px;
 }
 .list-category {
   height: 320px;
-  background-color: #BDE9D3;
-}
-.list-perks {
-
 }
 .category {
   height: 100px;
-  /*border: 2px solid green;*/
 }
 .category p {
   font-size: 1.5em;
@@ -43,4 +39,48 @@ footer {
 }
 .question {
   height: 300px;
+}
+
+/* User Favorite Section */
+.user-favorite h2 {
+  padding-top: 5%;
+  padding-bottom: 3%;
+}
+.favorite-box {
+  height: 400px;
+  width: 90%;
+}
+.one-box {
+  width: 45%;
+  float: left;
+  margin-left: 4%;
+}
+.favorite-details {
+  float: left;
+  width: 30%;
+  padding-top: 10%;
+  text-align: left;
+  padding-left: 10%;
+}
+.favorite-picture {
+  float: right;
+  width: 20%;
+}
+img {
+  width: 40%;
+}
+
+/*Google Map */
+#map {
+  height: 500px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* Search Section */
+.search {
+  height: 70px;
+  background-color: #B3B3CC;
+  both: clear;
+  padding-top: 30px;
 }

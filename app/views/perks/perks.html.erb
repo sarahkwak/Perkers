@@ -1,11 +1,10 @@
 <div class="hero">
   <h1>Employee Happiness Made Simple</h1>
 </div>
+
 <% if current_user %>
-  <div class=user-favorite>
-    <h2>Here is your most recent favorite perks</h2>
-    <div class="six columns">six</div>
-    <div class="six columns">six</div>
+  <div class="user-favorite">
+    <%= render "favorites/favorites" %>
   </div>
 <% else %>
   <div class="container how-to row">
@@ -14,11 +13,16 @@
     <div class="three columns">three</div>
   </div>
 <% end %>
+
 <div class=search>
   <form>
-    <button>Find Perks Near</button> <input>
+    <input type="text" name="Location">
+    <input type="submit" value="Find Perks Near You">
   </form>
 </div>
+
+<div id="map"></div>
+
 <div class="list-category">
   <h2>Want to Know What Perks You can Have?</h2>
     <% @categories.each do |category| %>
@@ -31,3 +35,5 @@
 <button class="button-primary">Show Me All the Perks</button>
 <div class=question>
 </div>
+<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&callback=initMap"></script>
