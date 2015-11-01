@@ -31,7 +31,8 @@ footer {
   height: 320px;
 }
 .category {
-  height: 100px;
+  height: 50px;
+  border: 2px solid green;
 }
 .category p {
   font-size: 1.5em;
@@ -83,4 +84,11 @@ img {
   background-color: #B3B3CC;
   both: clear;
   padding-top: 30px;
+}
+/* List Perks */
+.list_perks h3,p {
+  text-align: left;
+}
+.list_perks h1 {
+  font-family: 'Pacifico'
 }

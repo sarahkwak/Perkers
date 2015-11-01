@@ -23,17 +23,27 @@
 
 <div id="map"></div>
 
-<div class="list-category">
+<!-- <div class="list-category">
   <h2>Want to Know What Perks You can Have?</h2>
     <% @categories.each do |category| %>
       <div class="two columns category">
-        <button><%= category.name %></button>
+        <%= category.name %>
       </div>
     <% end %>
+</div> -->
+<div class="container list_perks">
+  <h1>All the Perks You've Dreamed</h1>
+  <% @perks.each do |perk| %>
+  <% if Brand.where(perk_id: perk.id).length > 0 %>
+    <h3><%= link_to "#{Brand.where(perk_id: perk.id).first.name}", perk_details_path(perk.id) %></h3>
+  <% end %>
+    <p><%= perk.details %></p>
+    <hr>
+  <% end %>
 </div>
-<div class="container list-perks"></div>
-<button class="button-primary">Show Me All the Perks</button>
+  <div class=pagination>
+    <%= will_paginate @perks %>
+  </div>
 <div class=question>
 </div>
-<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&callback=initMap"></script>
+<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&callback=initMap"></script> -->

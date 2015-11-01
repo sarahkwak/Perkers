@@ -6,7 +6,11 @@ class PerksController < ApplicationController
     end
     @brands = Brand.all
     gon.brands = @brands
+    @perks = Perk.paginate(:page => params[:page], :per_page => 10)
     render 'perks'
   end 
 
+  def details
+    @perk = Perk.find(params[:id])
+  end 
 end
