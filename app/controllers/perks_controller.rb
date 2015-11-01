@@ -11,6 +11,9 @@ class PerksController < ApplicationController
   end 
 
   def details
+    p "%" * 50
     @perk = Perk.find(params[:id])
+    p @perk
+    render json: @perk
   end 
 end

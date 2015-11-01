@@ -35,7 +35,10 @@
   <h1>All the Perks You've Dreamed</h1>
   <% @perks.each do |perk| %>
   <% if Brand.where(perk_id: perk.id).length > 0 %>
-    <h3><%= link_to "#{Brand.where(perk_id: perk.id).first.name}", perk_details_path(perk.id) %></h3>
+    <div class="brand_detail" id=<%= perk.id %>>
+      <h3><%= Brand.where(perk_id: perk.id).first.name %></h3>
+    <div class='hidden_detail'></div>
+    </div>
   <% end %>
     <p><%= perk.details %></p>
     <hr>
@@ -46,4 +49,4 @@
   </div>
 <div class=question>
 </div>
-<!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&callback=initMap"></script> -->
+
