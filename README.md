@@ -1,6 +1,7 @@
 # Perkers - Employee Hapiness Made Simple
 
-![Main Page](/app/assets/images/hero.jpg)
+![Alt Main Page](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/hero.png)
+
 ## This is a coding challenge for AnyPerk. 
 ### The challenge include 
 - Creating Schemas
@@ -8,7 +9,6 @@
 - Render two users latest favorite perks
 - Using popular gems like pagination
 - Using location to find perks 
-![Alt Main Page](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/hero.png)
 ##The Future Release
 1. Re-design the Schemas that doesn't require complecate database assess. For instance, the current design to look up category of perk goes through PerkCategory: 
 PerkCategory.where(perk_id: 7)
