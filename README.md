@@ -13,7 +13,13 @@ The app is in https://perkers.herokuapp.com/
 
 ### App Features
 
-![Alt List](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/list.png)
+#### Before Login 
+It render 'how to' section for Anyperk. 
+![Alt HowTo](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/before_login.png)
+
+#### After Login
+It render user's last two favorite perks.
+![Alt Main Page](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/middle.png)
 
 - Rails App (Rails 4.2.1, Ruby 2.0.0p576)
 - PostgreSQL database with db indexing
@@ -27,7 +33,7 @@ The app is in https://perkers.herokuapp.com/
 
 ### The Future Release
 
-![Alt Main Page](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/middle.png)
+![Alt List](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/list.png)
 
 1. Re-design the Schemas that doesn't require complecate database assess. For instance, the current design to look up category of perk goes through PerkCategory. This becomes really expensive to find a Brand information from Favorite table.
 
