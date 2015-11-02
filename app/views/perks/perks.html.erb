@@ -25,9 +25,9 @@
 
 <div class="container list_perks">
   <h1>All the Perks You've Dreamed</h1>
+  <hr>
   <% @perks.each do |perk| %>
   <% if Brand.where(perk_id: perk.id).length > 0 %>
-
   <div class="brand_detail" id=<%= perk.id %>>
     <div class="float_left" id=<%= perk.id %>>
       <h3><%= Brand.where(perk_id: perk.id).first.name %></h3> 

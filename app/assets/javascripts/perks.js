@@ -1,6 +1,5 @@
 var map;
 var markers = [];
-// var list_brands = gon.brands;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -11,21 +10,25 @@ function initMap() {
   google.maps.event.addListener(map, 'mouseout', function(event){
      this.setOptions({scrollwheel:false});
   });
+
+  var geocoder = new google.maps.Geocoder();
+  function geocodeAddress(geocoder, resultsMap) {
+    var list_brands = gon.brands;
+    for (var i =0; i< list_brands.length; i++) {
+      var mylocation = list_brands[i].location;
+      geocoder.geocode({'address': mylocation},function(results, status) {
+        var marker = new google.maps.Marker({
+          map: resultsMap,
+          position: results[0].geometry.location
+        });
+      });//geocoder
+    }; //for
+  };
+  geocodeAddress(geocoder, map);
+
   document.getElementById('address').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
   });
-  // function geocodeAddress(geocoder, resultsMap) {
-  //   for (var i =0; i< list_brands.length; i++) {
-  //     var mylocation = list_brands[i].location;
-  //     geocoder.geocode({'address': mylocation},function(results, status) {
-  //       var marker = new google.maps.Marker({
-  //         map: resultsMap,
-  //         position: results[0].geometry.location
-  //       });
-  //     });//geocoder
-  //   }; //for
-  // };
-  // geocodeAddress(geocoder, map);
 };
 
 function geocodeAddress(geocoder, resultsMap) {
@@ -34,18 +37,20 @@ function geocodeAddress(geocoder, resultsMap) {
   geocoder.geocode({'address': address}, function(results, status) {
     if (status === google.maps.GeocoderStatus.OK) {
       resultsMap.setCenter(results[0].geometry.location);
-      var marker = new google.maps.Marker({
-        map: resultsMap,
-        position: results[0].geometry.location
-      });
+      resultsMap.setZoom(14);
     } else {
       alert('Geocode was not successful for the following reason: ' + status);
     }
   });
-}
+};
 
 $(document).ready(function() {
- 
+  $('#address').click(function(evt) {
+    evt.preventDefault();
+    var geocoder = new google.maps.Geocoder();
+    geocodeAddress(geocoder, map);
+  }); //click
+
   $('.brand_detail').on('click', function(evt) {
     evt.preventDefault();
     $this = $(this)

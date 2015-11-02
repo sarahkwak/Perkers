@@ -13,12 +13,10 @@ body {
   opacity: 0.8;
 }
 .hero h1 {
-  padding-top: -30%;
+  margin-top: -10%;
+  font-size: 5em;
   color: #440044;
   font-family: 'Pacifico', cursive;
-}
-footer {
-  text-align: right;
 }
 .nav {
   /*font-family: helvetica;*/
@@ -86,7 +84,14 @@ img {
   text-align: left;
 }
 .list_perks h1 {
-  font-family: 'Pacifico'
+  font-family: 'Pacifico';
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 5em;
+}
+.brand_detail {
+  margin-top: -30px;
+  margin-bottom: -30px;
 }
 .brand_detail h3{
   color: purple;
@@ -95,10 +100,11 @@ img {
   color: #BB00BB;
 }
 .brand_detail img{
-  width: 40%;
+  width: 50%;
 }
 .float_left {
   float: left;
+  text-align: left;
 }
 .float_right {
   float: right;
@@ -118,4 +124,22 @@ img {
 }
 .favorite_btn:hover {
   color: #FF5BAD;
+}
+
+/* Favorite2 Section */
+.favorite2 h2{
+  font-size: 3em;
+  color: #52527A;
+}
+/*Footer Section */
+footer p{
+  text-align: right;
+  font-size: 1.4em;
+  line-height: 0.7em;
+}
+/* Pagination Section */
+.pagination {
+  font-size: 1.2em;
+  font-family: 'helvetica';
+
 }
