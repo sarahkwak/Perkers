@@ -2,8 +2,8 @@
   <h1>Employee Happiness Made Simple</h1>
 </div>
 
-<% if current_user %>
-  <div class="user-favorite">
+<% if current_user and Favorite.where(user_id: current_user.id).length > 0 %>
+  <div class="user_favorite">
     <%= render "favorites/favorites" %>
   </div>
 <% else %>
@@ -23,30 +23,30 @@
 
 <div id="map"></div>
 
-<!-- <div class="list-category">
-  <h2>Want to Know What Perks You can Have?</h2>
-    <% @categories.each do |category| %>
-      <div class="two columns category">
-        <%= category.name %>
-      </div>
-    <% end %>
-</div> -->
 <div class="container list_perks">
   <h1>All the Perks You've Dreamed</h1>
+  <hr>
   <% @perks.each do |perk| %>
   <% if Brand.where(perk_id: perk.id).length > 0 %>
-    <div class="brand_detail" id=<%= perk.id %>>
-      <h3><%= Brand.where(perk_id: perk.id).first.name %></h3>
-    <div class='hidden_detail'></div>
+  <div class="brand_detail" id=<%= perk.id %>>
+    <div class="float_left" id=<%= perk.id %>>
+      <h3><%= Brand.where(perk_id: perk.id).first.name %></h3> 
+      <span class='favorite_btn'>❤</span>
     </div>
+    <div class=float_right>
+      <img src='<%= Brand.where(perk_id:perk.id).first.image %>'/>
+    </div>
+    
+    <div class='hidden_detail'></div>
+
+  </div>
+
   <% end %>
-    <p><%= perk.details %></p>
     <hr>
   <% end %>
 </div>
   <div class=pagination>
     <%= will_paginate @perks %>
   </div>
-<div class=question>
-</div>
 
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_KEY']%>&callback=initMap"></script>
