@@ -38,18 +38,14 @@ footer {
   font-size: 1.5em;
   padding-top: 15%;
 }
-.question {
-  height: 300px;
-}
-
 /* User Favorite Section */
-.user-favorite h2 {
-  padding-top: 5%;
-  padding-bottom: 3%;
+.user_favorite h2 {
+  padding-top: 3%;
 }
 .favorite-box {
   height: 400px;
   width: 90%;
+  background-color: orange;
 }
 .one-box {
   width: 45%;
@@ -82,7 +78,7 @@ img {
 .search {
   height: 70px;
   background-color: #B3B3CC;
-  both: clear;
+  clear: both;
   padding-top: 30px;
 }
 /* List Perks */
@@ -92,8 +88,34 @@ img {
 .list_perks h1 {
   font-family: 'Pacifico'
 }
-
+.brand_detail h3{
+  color: purple;
+}
+.brand_detail h3:hover{
+  color: #BB00BB;
+}
+.brand_detail img{
+  width: 40%;
+}
+.float_left {
+  float: left;
+}
+.float_right {
+  float: right;
+}
 .hidden_detail {
   display: hidden;
   background-color: #D4E3F1;
+  clear: both;
+  top: -30px;
+}
+.favorite_btn {
+  font-size: 5em;
+  color: red;
+}
+.hidden_detail {
+  text-align: left;
+}
+.favorite_btn:hover {
+  color: #FF5BAD;
 }

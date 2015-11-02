@@ -1,19 +1,27 @@
 class FavoritesController < ApplicationController
-  def favorite
-  end
+  
+  def create
+    if current_user
+    favorite = Favorite.create(user_id: current_user.id, perk_category_id: PerkCategory.where(perk_id: params[:id]).first.id)
+    end
+  end 
 
   def unfavorite
+    Favorite.where(params[:format]).destroy!
   end
 
+  def show
+    @favorites = Favorite.where(user_id: current_user.id)
+    render 'favorite_all'
+  end 
   def user_favorite_2
     if current_user 
-      p "%" * 50
       user_favorite = Favorite.where(user_id: current_user.id).last(2)
       for i in 0..(user_favorite.length-1)
         fpc_id = user_favorite.perk_category_id
-        p @favorite_category = Category.find(PerkCategory.find(fpc_id).category_id)
-        p @favorite_brand = Brand.find(PerkCategory.find(fpc_id).perk_id)
-        p @favorite_detail = Perk.find(PerkCategory.find(fpc_id).perk_id).details
+       @favorite_category = Category.find(PerkCategory.find(fpc_id).category_id)
+       @favorite_brand = Brand.find(PerkCategory.find(fpc_id).perk_id)
+       @favorite_detail = Perk.find(PerkCategory.find(fpc_id).perk_id).details
       end
     end
   end
