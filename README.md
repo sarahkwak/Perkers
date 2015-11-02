@@ -29,10 +29,7 @@ The app is in https://perkers.herokuapp.com/
 
 ![Alt Main Page](https://github.com/sarahkwak/Perkers/blob/master/app/assets/images/middle.png)
 
-1. Re-design the Schemas that doesn't require complecate database assess. For instance, the current design to look up category of perk goes through PerkCategory: 
-PerkCategory.where(perk_id: 7)
-
-This becomes really expensive to find a brand information from Favorite table.
+1. Re-design the Schemas that doesn't require complecate database assess. For instance, the current design to look up category of perk goes through PerkCategory. This becomes really expensive to find a Brand information from Favorite table.
 
 2. Google Map Info Window - Implement Info window so user can click the info window to get perk information
 
