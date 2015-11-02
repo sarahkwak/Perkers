@@ -3,15 +3,13 @@
   <% if @user_favorite.length == 2 %>
     <% for i in 0..1 %>
       <% fpc_id = @user_favorite[i].perk_category_id %>
-      <% @favorite_category = Category.find(PerkCategory.find(fpc_id).category_id) %>
       <% @favorite_brand = Brand.find(PerkCategory.find(fpc_id).perk_id)%>
       <% @favorite_detail = Perk.find(PerkCategory.find(fpc_id).perk_id).details%>
     
     <div class='one-box'>
       <div class='favorite-details'>
-        <p>Category: <%= @favorite_category.name %></p>
-        <p>Name: <%= @favorite_brand.name %></p>
-        <p>Details: <%= @favorite_detail %></p>
+        <p><strong>Name: </strong><%= @favorite_brand.name %></p>
+        <p><strong>Details: </strong><%= @favorite_detail %></p>
       </div>
         
         <img src="<%= @favorite_brand.image %>"/>
@@ -20,12 +18,10 @@
       
   <% else %>
     <% fpc_id = @user_favorite.first.perk_category_id %>
-    <% @favorite_category = Category.find(PerkCategory.find(fpc_id).category_id) %>
     <% @favorite_brand = Brand.find(PerkCategory.find(fpc_id).perk_id)%>
     <% @favorite_detail = Perk.find(PerkCategory.find(fpc_id).perk_id).details%>
     <div class='one-box'>
       <div class='favorite-details'>
-        <p>Category: <%= @favorite_category.name %></p>
         <p>Name: <%= @favorite_brand.name %></p>
         <p>Details <%= @favorite_detail %></p>
       </div>

@@ -1,17 +1,19 @@
-<h2>Your All Time Favorites</h2>
+<div class='favorite_page'>  
+  <div class="hero">
+    <h1>Your All Time Favorites</h1>
+  </div>
   <% for i in 0..(@favorites.length-1)%>
     <% fpc_id = @favorites[i].perk_category_id %>
-    <% @favorite_category = Category.find(PerkCategory.find(fpc_id).category_id) %>
     <% @favorite_brand = Brand.find(PerkCategory.find(fpc_id).perk_id)%>
     <% @favorite_detail = Perk.find(PerkCategory.find(fpc_id).perk_id).details%>
   <div class='one-box'>
     <div class='favorite-details'>
-      <p>Category: <%= @favorite_category.name %></p>
-      <p>Name: <%= @favorite_brand.name %></p>
-      <p>Details <%= @favorite_detail %></p>
+      <p><strong>Name: </strong> <%= @favorite_brand.name %></p>
+      <p><strong>Details: </strong><%= @favorite_detail %></p>
       <%= link_to "Unfavorite", unfavorite_path(@favorites[i]), method: :delete %>
     </div>
       <img src="<%= @favorite_brand.image %>"/>
     </div>
   </div>
   <% end %>
+</div>

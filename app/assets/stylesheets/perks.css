@@ -154,9 +154,14 @@ footer p{
   text-align: right;
   font-size: 1.4em;
   line-height: 0.7em;
+  clear: both;
 }
 /* Pagination Section */
 .pagination {
   font-size: 1.2em;
   font-family: 'helvetica';
+}
+/*Favorite Page */
+.favorite_page {
+  h1
 }

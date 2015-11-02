@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root 'perks#index'
   get 'perks/:id' => 'perks#details'
   get 'favorite/:id' => 'favorites#create'
-  get 'favorite' => 'favorites#show', as: :favorite
+  get 'favorites/' => 'favorites#show', as: :favorites
   delete 'unfavorite/:id' => 'favorites#unfavorite', as: :unfavorite
 end
