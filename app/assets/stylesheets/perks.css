@@ -18,12 +18,28 @@ body {
   color: #440044;
   font-family: 'Pacifico', cursive;
 }
+/* Nav Section */
 .nav {
-  /*font-family: helvetica;*/
+  font-size: 1.2em;
   text-align: right;
+  padding-right: 15px;
 }
+/* HowTo Section */
 .how-to {
   height: 250px;
+  width: 80%;
+}
+.how_container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.how_to img{
+  size: 20%;
+}
+.how_to p{
+  margin-top: 10px;
+  font-family: 'helvetica';
+  text-align: center;
 }
 .list-category {
   height: 320px;
@@ -132,6 +148,8 @@ img {
   color: #52527A;
 }
 /*Footer Section */
+footer {
+}
 footer p{
   text-align: right;
   font-size: 1.4em;
@@ -141,5 +159,4 @@ footer p{
 .pagination {
   font-size: 1.2em;
   font-family: 'helvetica';
-
 }

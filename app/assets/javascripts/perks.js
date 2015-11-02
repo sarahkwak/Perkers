@@ -17,10 +17,17 @@ function initMap() {
     for (var i =0; i< list_brands.length; i++) {
       var mylocation = list_brands[i].location;
       geocoder.geocode({'address': mylocation},function(results, status) {
-        var marker = new google.maps.Marker({
-          map: resultsMap,
-          position: results[0].geometry.location
-        });
+        if ( results != null) {
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: results[0].geometry.location
+          });
+        } else {
+          var marker = new google.maps.Marker({
+            map: resultsMap,
+            position: {lat:  37.775, lng: -122.419}
+          });
+        }
       });//geocoder
     }; //for
   };
