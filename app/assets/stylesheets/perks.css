@@ -13,42 +13,53 @@ body {
   opacity: 0.8;
 }
 .hero h1 {
-  padding-top: -30%;
+  margin-top: -10%;
+  font-size: 5em;
   color: #440044;
   font-family: 'Pacifico', cursive;
 }
-footer {
-  text-align: right;
-}
+/* Nav Section */
 .nav {
-  /*font-family: helvetica;*/
+  font-size: 1.2em;
   text-align: right;
+  padding-right: 15px;
 }
+/* HowTo Section */
 .how-to {
   height: 250px;
+  width: 80%;
+}
+.how_container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.how_to img{
+  size: 20%;
+}
+.how_to p{
+  margin-top: 10px;
+  font-family: 'helvetica';
+  text-align: center;
 }
 .list-category {
   height: 320px;
 }
 .category {
-  height: 100px;
+  height: 50px;
+  border: 2px solid green;
 }
 .category p {
   font-size: 1.5em;
   padding-top: 15%;
 }
-.question {
-  height: 300px;
-}
-
 /* User Favorite Section */
-.user-favorite h2 {
-  padding-top: 5%;
-  padding-bottom: 3%;
+.user_favorite h2 {
+  padding-top: 3%;
 }
 .favorite-box {
   height: 400px;
   width: 90%;
+  background-color: orange;
 }
 .one-box {
   width: 45%;
@@ -81,6 +92,71 @@ img {
 .search {
   height: 70px;
   background-color: #B3B3CC;
-  both: clear;
+  clear: both;
   padding-top: 30px;
+}
+/* List Perks */
+.list_perks h3,p {
+  text-align: left;
+}
+.list_perks h1 {
+  font-family: 'Pacifico';
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 5em;
+}
+.brand_detail {
+  margin-top: -30px;
+  margin-bottom: -30px;
+}
+.brand_detail h3{
+  color: purple;
+}
+.brand_detail h3:hover{
+  color: #BB00BB;
+}
+.brand_detail img{
+  width: 50%;
+}
+.float_left {
+  float: left;
+  text-align: left;
+}
+.float_right {
+  float: right;
+}
+.hidden_detail {
+  display: hidden;
+  background-color: #D4E3F1;
+  clear: both;
+  top: -30px;
+}
+.favorite_btn {
+  font-size: 5em;
+  color: red;
+}
+.hidden_detail {
+  text-align: left;
+}
+.favorite_btn:hover {
+  color: #FF5BAD;
+}
+
+/* Favorite2 Section */
+.favorite2 h2{
+  font-size: 3em;
+  color: #52527A;
+}
+/*Footer Section */
+footer {
+}
+footer p{
+  text-align: right;
+  font-size: 1.4em;
+  line-height: 0.7em;
+}
+/* Pagination Section */
+.pagination {
+  font-size: 1.2em;
+  font-family: 'helvetica';
 }
