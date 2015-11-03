@@ -7,11 +7,14 @@ class FavoritesController < ApplicationController
   end 
 
   def unfavorite
-    Favorite.where(params[:format]).destroy!
+    Favorite.find(params[:id]).destroy!
+    redirect_to '/favorites'
   end
 
   def show
     @favorites = Favorite.where(user_id: current_user.id)
+    p "&" * 30
+    p Favorite.where(user_id: current_user).count
     render 'favorite_all'
   end 
   def user_favorite_2
